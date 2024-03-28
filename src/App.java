@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        TaskList taskList = new TaskList();
         boolean jalan = true;
         Scanner scanner = new Scanner(System.in);
         boolean strukturDipilih = false;
-        String[] strukturData = {"LinkedList", "Stack", "Queue"};
+        String[] strukturData = { "LinkedList", "Stack", "Queue" };
         String strukturTerpilih = "Tidak Ada";
         byte pilihan = 0;
         while (jalan) {
@@ -21,6 +22,7 @@ public class App {
             System.out.print("Pilih : ");
             try {
                 pilihan = scanner.nextByte();
+                scanner.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("\nInput tidak valid!");
                 scanner.nextLine();
@@ -34,9 +36,11 @@ public class App {
                     System.out.println("3. Queue");
                     try {
                         byte pilihStruktur = scanner.nextByte();
+                        scanner.nextLine();
                         if (pilihStruktur == 1) {
                             strukturDipilih = true;
                             strukturTerpilih = strukturData[0];
+
                             System.out.println("Aku LinkedList");
                         } else if (pilihStruktur == 2) {
                             strukturDipilih = true;
@@ -57,21 +61,29 @@ public class App {
                     if (!strukturDipilih) {
                         System.out.println("\nPilih Struktur Data terlebih dahulu!");
                     } else {
-                        System.out.println("\nAku tampil " + strukturTerpilih);
+                        if (strukturTerpilih == strukturData[2]) {
+                            taskList.displayTasks();
+                        }
                     }
                     break;
                 case 3:
                     if (!strukturDipilih) {
                         System.out.println("\nPilih Struktur Data terlebih dahulu!");
-                    } else {
-                        System.out.println("\nAku tambah " + strukturTerpilih);
+                    } else if (strukturTerpilih == strukturData[2]) {
+                        System.out.print("Masukkan task\t: ");
+                        String task = scanner.nextLine();
+                        taskList.addTask(task);
                     }
                     break;
                 case 4:
                     if (!strukturDipilih) {
                         System.out.println("\nPilih Struktur Data terlebih dahulu!");
                     } else {
-                        System.out.println("\nAku hapus " + strukturTerpilih);
+                        if (strukturTerpilih == strukturData[2]) {
+                            System.out.println("Task dihapus!");
+                            taskList.removeTask();
+                            ;
+                        }
                     }
                     break;
                 case 5:
