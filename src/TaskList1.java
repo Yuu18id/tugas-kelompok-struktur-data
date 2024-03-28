@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 public class TaskList1 {
-    private LinkedList<Task> daftarTugas;
+    private LinkedList daftarTugas;
 
     // Konstruktor untuk inisialisasi LinkedList
     public TaskList1() {
@@ -9,7 +9,7 @@ public class TaskList1 {
     }
 
     // Metode untuk menambahkan tugas ke dalam daftar
-    public void tambahTugas(Task tugas) {
+    public void tambahTugas(String tugas) {
         daftarTugas.add(tugas);
     }
 
@@ -35,11 +35,11 @@ public class TaskList1 {
     }
         public static void main(String[] args) {
             // Membuat objek TaskList
-            TaskList taskList = new TaskList();
+            TaskList1 taskList = new TaskList1();
     
             // Menambahkan beberapa tugas ke dalam daftar
-            taskList.tambahTugas(new Task("Membuat makalah", "Persiapan untuk kumpul makalah"));
-            taskList.tambahTugas(new Task("Menyelesaikan laporan", "Laporan mingguan harus diserahkan hari ini"));
+            taskList.tambahTugas("Membuat makalah");
+            taskList.tambahTugas("Menyelesaikan laporan");
     
             // Menampilkan daftar tugas
             taskList.tampilkanDaftarTugas();

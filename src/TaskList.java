@@ -46,4 +46,19 @@ public class TaskList {
 
         taskList.displayTasks();
     }
+
+    public void tambahTugas(String string, String string2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'tambahTugas'");
+    }
+
+    public void tampilkanDaftarTugas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'tampilkanDaftarTugas'");
+    }
+
+    public void hapusTugas(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'hapusTugas'");
+    }
 }
