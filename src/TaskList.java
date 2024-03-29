@@ -2,33 +2,35 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class TaskList {
-    private Queue<String> tasks;
+    private Queue<Task> tasks;
 
     public TaskList() {
         this.tasks = new LinkedList<>();
     }
 
-    public void addTask(String task) {
-        tasks.offer(task); 
-        System.out.println("Tugas \"" + task + "\" ditambahkan.");
+    public void addTask(Task task) {
+        tasks.offer(task);
+        System.out.println("Berhasil menambahkan tugas!");
     }
 
     public void removeTask() {
         if (tasks.isEmpty()) {
             System.out.println("Tidak ada tugas yang dapat dihapus.");
         } else {
-            String removedTask = tasks.poll(); 
-            System.out.println("Tugas \"" + removedTask + "\" dihapus.");
+            Task removedTask = tasks.poll();
+            System.out.println("Tugas berhasil dihapus!");
         }
     }
 
     public void displayTasks() {
         if (tasks.isEmpty()) {
-            System.out.println("Tidak ada tugas dalam daftar.");
+            System.out.println("Daftar tugas kosong.");
         } else {
             System.out.println("Daftar Tugas:");
-            for (String task : tasks) {
-                System.out.println("- " + task);
+            int i = 1;
+            for (Task task : tasks) {
+                
+                System.out.println("Tugas " + (i++) + "\n" +task);
             }
         }
     }
@@ -36,29 +38,12 @@ public class TaskList {
     public static void main(String[] args) {
         TaskList taskList = new TaskList();
 
-        taskList.addTask("Menyelesaikan tugas harian");
-        taskList.addTask("Membuat logbook harian");
-        taskList.addTask("Mengerjakan proyek tugas akhir");
-
-        taskList.displayTasks();
+        taskList.addTask(new Task("Menyelesaikan tugas harian", "Deskripsi tugas harian"));
+        taskList.addTask(new Task("Membuat logbook harian", "Deskripsi logbook harian"));
+        taskList.addTask(new Task("Mengerjakan proyek tugas akhir", "Deskripsi proyek tugas akhir"));
 
         taskList.removeTask();
 
         taskList.displayTasks();
-    }
-
-    public void tambahTugas(String string, String string2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'tambahTugas'");
-    }
-
-    public void tampilkanDaftarTugas() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'tampilkanDaftarTugas'");
-    }
-
-    public void hapusTugas(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'hapusTugas'");
     }
 }

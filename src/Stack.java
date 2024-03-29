@@ -1,12 +1,12 @@
 public class Stack {
     // Atribut Stack
     int max, top;
-    String[] arr;
+    Task[] arr;
 
     // Constructor Stack
     public Stack(int maxSize) {
         this.max = maxSize;
-        this.arr = new String[maxSize];
+        this.arr = new Task[maxSize];
         this.top = -1;
     }
 
@@ -22,17 +22,17 @@ public class Stack {
 
     // Melihat tugas terakhir yang ditambahkan
     void peek() {
-        System.out.println("Tugas terakhir : " + arr[top]);
+        System.out.println("Tugas terakhir :\n" + arr[top]);
     }
 
     // Menambahkan tugas
-    void push(String value) {
+    void push(Task value) {
         if (isFull()) {
             System.out.println("Gagal menambahkan tugas karena list tugas telah penuh");
         } else {
             top++;
             arr[top] = value;
-            System.out.println(value + " telah ditambahkan dalam tugas");
+            System.out.println("Berhasil menambahkan tugas!");
         }
     }
 
@@ -42,6 +42,7 @@ public class Stack {
             System.out.println("Gagal menghapus tugas karena tidak ada tugas yang tersedia");
         } else {
             top--;
+            System.out.println("Tugas berhasil dihapus!");
         }
     }
 
@@ -55,7 +56,7 @@ public class Stack {
             System.out.println("Jumlah maksimal tugas : " + max);
             System.out.println("Tugas yang tersedia : ");
             for (int i = 0; i <= top; i++) {
-                System.out.println((i + 1) + ". " + arr[i]);
+                System.out.println("Tugas " + (i + 1) + "\n" + arr[i]);
             }
             // Tampilkan tugas terbaru 
             peek();

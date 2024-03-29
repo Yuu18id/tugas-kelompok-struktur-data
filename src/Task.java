@@ -9,6 +9,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Judul: " + judul + ", Deskripsi: " + deskripsi;
+        return "Judul\t\t: " + judul + "\nDeskripsi\t: " + deskripsi+"\n";
     }
 }
